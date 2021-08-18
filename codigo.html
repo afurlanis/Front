@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="codig.css">
+    <title>JobsNet - Banco de Currículo</title>
+</head>
+<body>
+    <header>
+        <div>
+           <img src="Jobs net.png" width="205" height="205">
+        </div>
+        <ul>
+            <li>
+                <a href="https://www.google.com/">Dúvidas?</a>
+            </li>
+
+        </ul>
+        </div>
+           
+    </header>
+    <main>
+        <section class="container">
+          <div class="name">
+              <h1>Dados Pessoais</h1>
+
+              <form>
+                <div class="campo">
+                 <label for="nome"><strong>Nome Completo</strong></label>
+                 <input type="text" name="nome" id="nome" required placeholder="Ex.: João Fulano">
+
+                <div class="campo">
+                 <label for="cargo"><strong>Cargo Pretendido</strong></label>
+                 <input type="text" name="cargo" id="cargo" required placeholder="Ex.: Analista">
+            
+                <div>
+                  <label for="nascimento"><strong>Data de Nascimento:</strong></label>
+                  <input type="date" id="nascimento" name="nascimento" min="1900-01-01" max="2021-08-21" required >
+                  <span class="validity"  name="data" id="data" required></span>
+                </div>
+    
+                <div>
+                <label for="estado"><strong>Estado Civil:</strong></label>
+                <SELECT NAME="Estado Civil">
+                    <OPTION disabled selected value> </OPTION>
+                    <OPTION> Solteiro(a)
+                    <OPTION> Casado(a)
+                    <OPTION> Divorciado(a)
+                    <OPTION> Viúvo(a)
+                    <OPTION> Separado(a)
+                    </SELECT>
+                </div>
+
+                <div>
+                    <label for="sexo"><strong>Sexo:</strong></label>
+                    <SELECT NAME="Sexo" id="sexo" required>
+                        <OPTION disabled selected value>  </OPTION>
+                        <OPTION> Feminino
+                        <OPTION> Masculino
+                        <OPTION> Outro
+                    </SELECT>
+                </div>
+              </form>
+
+ <!--Iniciando parte do script com relação ao cep-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<!--Formulário Cep-->
+	<form>
+		<label for="cep"><strong>CEP</strong></label>
+		<input id="cep" type="text" required/>
+		<label for="endereço"><strong>Endereço</strong></label>
+		<input id="endereço" type="text" required/>
+		<label for="numero"><strong>Número</strong></label>
+		<input id="numero" type="text" />
+		<label for="complemento"><strong>Complemento</strong></label>
+		<input id="complemento" type="text"/>
+		<label for="bairro"><strong>Bairro</strong></label>
+		<input id="bairro" type="text" required/>
+		<label for="uf"><strong>Estado</strong></label>
+		<select id="uf">
+            <OPTION disabled selected value>  </OPTION>
+			<option value="AC">Acre</option>
+			<option value="AL">Alagoas</option>
+			<option value="AP">Amapá</option>
+			<option value="AM">Amazonas</option>
+			<option value="BA">Bahia</option>
+			<option value="CE">Ceará</option>
+			<option value="DF">Distrito Federal</option>
+			<option value="ES">Espírito Santo</option>
+			<option value="GO">Goiás</option>
+			<option value="MA">Maranhão</option>
+			<option value="MT">Mato Grosso</option>
+			<option value="MS">Mato Grosso do Sul</option>
+			<option value="MG">Minas Gerais</option>
+			<option value="PA">Pará</option>
+			<option value="PB">Paraíba</option>
+			<option value="PR">Paraná</option>
+			<option value="PE">Pernambuco</option>
+			<option value="PI">Piauí</option>
+			<option value="RJ">Rio de Janeiro</option>
+			<option value="RN">Rio Grande do Norte</option>
+			<option value="RS">Rio Grande do Sul</option>
+			<option value="RO">Rondônia</option>
+			<option value="RR">Roraima</option>
+			<option value="SC">Santa Catarina</option>
+			<option value="SP">São Paulo</option>
+			<option value="SE">Sergipe</option>
+			<option value="TO">Tocantins</option>
+		</select>
+	</form>
+	
+	<script type="text/javascript">
+		$("#cep").focusout(function(){
+			//Início do Comando AJAX
+			$.ajax({
+				//O campo URL diz o caminho de onde virá os dados
+				url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+				//tipo de dados JSON
+				dataType: 'json',
+
+				success: function(resposta){
+					// preenchimento automaticom
+					$("#endereço").val(resposta.logradouro);
+					$("#complemento").val(resposta.complemento);
+					$("#bairro").val(resposta.bairro);
+					$("#cidade").val(resposta.localidade);
+					$("#uf").val(resposta.uf);
+
+					$("#numero").focus();
+				}
+			});
+		});
+	</script>
+
+<!-- Agora é o celulaaaaaaaaaaaaaaar-->
+        <script>
+            
+
+        </script>
+
+        <form>
+            <div class="campo">
+            <label for="email"><strong>E-mail</strong></label>
+            <input type="text" name="email" id="email" required placeholder="Ex.: joãomel@email.com">
+    
+            </div>
+        </form>
+
+
+          </div>
+
+          <div class="name">
+            <h2>Documentos</h2>
+          </div>
+
+          <form>
+            <div class="campo">
+             <label for="rg"><strong>Identidade</strong></label>
+             <input type="text" name="rg" id="rg" minlenght="9" maxlength="9" placeholder="Ex.: 00.000.000-0" >
+            </div>
+          </form>
+
+          
+
+          <div class="name">
+              <div>
+                 <button>Enviar Currículo</button>
+              </form>
+          </div>
+        </section>
+    </main>
+
+    <script>
+        function displayAbout() {
+            var arrow = document.getElementById('animation')
+            arrow.classList.toggle('rotate')
+            var display = document.getElementById('about')
+            display.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
