@@ -8,27 +8,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="codig.css">
+    <link rel="stylesheet" href="codigo.css">
     <title>JobsNet - Banco de Currículo</title>
 </head>
 <body>
     <header>
         <div>
-           <img src="Jobs net.png" width="205" height="205">
+           <img src="Jobs net.png" width="200" height="100">
         </div>
         <ul>
             <li>
-                <a href="https://www.google.com/">Dúvidas?</a>
+                <a href="https://www.google.com/">Dúvidas</a>
+            </li>
+            <li>
+                <a href="https://www.google.com/">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/amandamelaniasfurlanis/">LinkedIn</a>
             </li>
 
         </ul>
         </div>
            
     </header>
+     
+         <h1> Banco de Currículo</h1>
+    
     <main>
         <section class="container">
           <div class="name">
-              <h1>Dados Pessoais</h1>
+              <h2>Dados Pessoais</h2>
 
               <form>
                 <div class="campo">
@@ -140,10 +149,19 @@
 	</script>
 
 <!-- Agora é o celulaaaaaaaaaaaaaaar-->
-        <script>
-            
+        <form>
+             <div class="campo">
+             <label for="celular"><strong>Celular</strong></label>
+             <input type="text" name="celular" id="celular" minlenght="9" maxlength="12" placeholder="Ex.: DDD + Número" required>
+             </div>
+         </form>
 
-        </script>
+         <form>
+            <div class="campo">
+            <label for="recado"><strong>Telefone Recado</strong></label>
+            <input type="text" name="recado" id="recado" minlenght="8" maxlength="11" placeholder="Ex.: DDD + Número" >
+            </div>
+        </form>
 
         <form>
             <div class="campo">
@@ -163,9 +181,32 @@
           <form>
             <div class="campo">
              <label for="rg"><strong>Identidade</strong></label>
-             <input type="text" name="rg" id="rg" minlenght="9" maxlength="9" placeholder="Ex.: 00.000.000-0" >
+             <input type="text" name="rg" id="rg" minlenght="9" maxlength="12" placeholder="Ex.: 00.000.000-0" >
             </div>
           </form>
+
+          <div>
+            <label for="veiculo"><strong>Veículo</strong></label>
+            <SELECT NAME="veiculo" id="veiculo" >
+                <OPTION disabled selected value>  </OPTION>
+                <OPTION> Sim
+                <OPTION> Não 
+            </SELECT>
+        </div>
+
+
+          <div>
+            <label for="cnh"><strong>Habilitação</strong></label>
+            <SELECT NAME="cnh" id="cnh" >
+                <OPTION disabled selected value>  </OPTION>
+                <OPTION> Não possuo
+                <OPTION> A
+                <OPTION> B
+                <OPTION> C
+                <OPTION> D
+                <OPTION> E
+            </SELECT>
+        </div>
 
           
 
@@ -177,13 +218,5 @@
         </section>
     </main>
 
-    <script>
-        function displayAbout() {
-            var arrow = document.getElementById('animation')
-            arrow.classList.toggle('rotate')
-            var display = document.getElementById('about')
-            display.classList.toggle('active')
-        }
-    </script>
 </body>
 </html>
